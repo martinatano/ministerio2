@@ -1,0 +1,27 @@
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+h2{
+    padding:20px;
+    text-align: center;
+}
+
+label{
+    padding: 10px;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+.valido {
+    border: 2px solid green;
+}
+
+.invalido {
+    border: 2px solid red;
+}

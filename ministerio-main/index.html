@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <title>Grados</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Escudo_del_Ejército_Argentino.png"
+                        alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    Ejercito Argentino
+                </a>
+                <a href="./usuarios.html">Usuarios</a>
+                <a href="./form.html">Formulario</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2>Lista de grados del Ejercito Argentino</h2>
+        <section class="form">
+            <div class="container-sm">
+                <table class="table table-success table-striped">
+                    <tr>
+                        <th>N°</th>
+                        <th>Descripcion</th>
+                        <th>Abreviatura</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Teniente general</td>
+                        <td>TG</td>
+                    <tr>
+                        <td>2</td>
+                        <td>General de division</td>
+                        <td>GD</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>General de brigada</td>
+                        <td>GB</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Coronel mayor</td>
+                        <td>CY</td>
+                    </tr>
+                    <td>5</td>
+                    <td>Coronel</td>
+                    <td>CR</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Teniente coronel</td>
+                        <td>TC</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Mayor</td>
+                        <td>MY</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Capitan</td>
+                        <td>CT</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Teniente primero</td>
+                        <td>TP</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Teniente</td>
+                        <td>TT</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Subteniente</td>
+                        <td>ST</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Suboficial mayor</td>
+                        <td>SM</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Suboficial principal</td>
+                        <td>SP</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Sargento ayudante</td>
+                        <td>SA</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Sargento primero</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Sargento</td>
+                        <td>SG</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Cabo primero</td>
+                        <td>CI</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Cabo</td>
+                        <td>CB</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Voluntario de 1ra</td>
+                        <td>VP</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Voluntario de segunda</td>
+                        <td>VS</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Voluntario de segunda en comision</td>
+                        <td>VS "EC"</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <br>
+        <section class="form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <br>
+            <label for="nombre">Grado:</label>
+            <input type="text" id="grado" name="grado">
+        </section>
+        <br>
+        <section class="form">
+            <form >Seleccione una opcion:
+                <br>
+                <label> Estado civil
+                    <br>
+                    <input type="radio" name="opciones" value="opcion1" checked> Soltero
+                </label>
+        
+                <label>
+                    <input type="radio" name="opciones" value="opcion2"> Casado
+                </label>
+        
+                <label>
+                    <input type="radio" name="opciones" value="opcion3"> En pareja
+                </label>
+            </form>
+        <br>
+        </section>
+        <section class="form">
+            <label for="opciones">En que sede trabaja?</label>
+            <select id="opciones" name="opciones">
+                <br>
+                <option value="opcion1">Sede 1</option>
+                <option value="opcion2">Sede 2</option>
+                <option value="opcion3">Sede 3</option>
+            </select>
+        </section>
+        <br>
+        <section class="form">
+            <form action="archivo_php.php" method="post">
+              
+                <label for="nombre">Edad:</label>
+                <input type="text" id="nombre" name="nombre">
+        
+           
+                <input type="submit" value="Enviar">
+        </section>
+        <br>
+        <section class="form">
+            <button type='button' onClick='mostrarAlerta()'> Mostrar Alerta</button>
+        </section>
+        <br>
+        <section class="form">
+            <button type="button" onclick="agregarElemento('Nissan')"> Buscar y agregar</button>
+        </section>
+        <br>
+        <section class="form">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" oninput="validarContraseña()">
+
+            <label for="confirmPassword">Confirmar contraseña:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" oninput="validarContraseña()">
+            <span id="mensajeError" class="error">  </span>
+        </section>
+        <br>
+        <section class="form">
+            <label for="opciones">Seleccione una opcion:</label>
+            <select id="opciones" onchange="habilitarBoton()">
+            <option value="" selected >seleccione una opcion</option>
+            <option value="opcion1">opcion1</option>
+            <option value="opcion2">opcion2</option>
+            <option value="opcion3">opcion3</option>
+            <option value="opcion4">opcion4</option>
+            </select>
+            <button id="botonOK"  disabled onclick="realizarAccion()">ok</button>
+        </section>
+    </main>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</html>
