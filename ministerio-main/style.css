@@ -13,15 +13,19 @@ label{
     padding: 10px;
 }
 
-.form{
-    display: flex;
-    justify-content: center;
+.form_correcto .formulario_label{
+    color:green;
 }
 
-.valido {
-    border: 2px solid green;
+.form_correcto .formulario_input{
+    border: green solid 3px;
 }
 
-.invalido {
-    border: 2px solid red;
+.form_incorrecto .formulario_label{
+    color: red;
 }
+
+.form_incorrecto .formulario_input{
+    border: red solid 3px;
+}
+
