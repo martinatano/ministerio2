@@ -114,6 +114,36 @@
     
     <div id="respuesta"></div>
     </main>
+    <div class="modal fade" id="modalExito" tabindex="-1" role="dialog" aria-labelledby="modalExitoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalExitoLabel">¡Éxito!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Formulario enviado con exito.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="modalErrorLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalErrorLabel">¡Error!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>No se pudo enviar el formulario. Revise los campos.</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 <script>
@@ -289,7 +319,7 @@
         });
 
 
-    $('#Enviar').click(function(){
+        $('#Enviar').click(function(){
     var grados = document.getElementById('grados').options[document.getElementById('grados').selectedIndex].text;
     var apellidos = document.getElementById('apellidos').value;
     var nombre = document.getElementById('nombres').value;
@@ -301,7 +331,25 @@
 
     var ruta = "grado="+grados+"&Ape="+apellidos+"&nom="+nombre+"&dni="+dni+"&edad="+edad+"&sexo="+sexo+"&fechaNac="+fechaNac+"&dom="+domicilio;
 
-    function validarDni(){
+    $.ajax({
+        url: 'archivo_php.php',
+        type: 'POST',
+        data: ruta,
+    })
+
+    .done(function(res){
+        $('#respuesta').html(res);
+        $('#modalExito').modal('show');
+    })
+    .fail(function(){
+        $('#modalError').modal('show');
+    })
+    .always(function(){
+        console.log("complete");
+    })
+
+} )
+function validarDni(){
         $.ajax({
             url: 'https://dnis-api.onrender.com/',
             method:'GET',
@@ -311,22 +359,6 @@
         })
     }
 
-    $.ajax({
-        url: 'archivo_php.php',
-        type: 'POST',
-        data: ruta,
-    })
-
-    .done(function(res){
-        $('#respuesta').html(res)
-    })
-    .fail(function(){
-        console.log("error");
-    })
-    .always(function(){
-        console.log("complete");
-    })
-} )
 </script>
 
 </html> 

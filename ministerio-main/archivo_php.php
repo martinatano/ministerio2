@@ -1,4 +1,4 @@
- <?php
+<?php
         $grado = $_POST['grado'];
         $apellidos = $_POST['Ape'];
         $nombres = $_POST['nom'];
