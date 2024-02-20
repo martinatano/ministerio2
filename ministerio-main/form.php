@@ -184,6 +184,28 @@
                     document.getElementById("grupodni").classList.remove('form_incorrecto'); 
                     document.getElementById('grupodni').classList.add('form_correcto');
                     document.getElementById('errordni').classList.remove('formulario__input-error-activo');
+                    $.ajax({
+                        url: 'https://dnis-api.onrender.com/',
+                        type: 'GET',
+                     success: function (dnis) {
+                        console.log(dnis);
+                         var dniIngresado = e.target.value;
+                         var dniExiste = dnis.includes(dniIngresado);
+
+                if (dniExiste) {
+                    console.log('El DNI ingresado está en la lista de la API.');
+                    // Por ejemplo, mostrar un mensaje de error
+                    document.getElementById('grupodni').classList.add('form_incorrecto');
+                    document.getElementById('grupodni').classList.remove('form_correcto');
+                    document.getElementById('errordni').classList.add('formulario__input-error-activo');
+                    e.preventDefault();
+                } else {
+                    // El DNI no está en la lista de la API, puedes continuar con la validación
+                    console.log('El DNI ingresado no está en la lista de la API.');
+                }
+            }
+        });
+
                 }else{
                     document.getElementById('grupodni').classList.add('form_incorrecto');
                     document.getElementById('grupodni').classList.remove('form_correcto');
@@ -279,6 +301,15 @@
 
     var ruta = "grado="+grados+"&Ape="+apellidos+"&nom="+nombre+"&dni="+dni+"&edad="+edad+"&sexo="+sexo+"&fechaNac="+fechaNac+"&dom="+domicilio;
 
+    function validarDni(){
+        $.ajax({
+            url: 'https://dnis-api.onrender.com/',
+            method:'GET',
+            success: (function(dnis){
+
+            })
+        })
+    }
 
     $.ajax({
         url: 'archivo_php.php',
